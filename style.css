@@ -1,0 +1,206 @@
+/* style.css */
+
+/* Resetando o margin e padding e definindo box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definindo as cores principais e variáveis para o tema */
+:root {
+    --cor-primaria-claro: #6A0DAD;
+    --cor-primaria-escuro: #4B0082;
+    --cor-secundaria-claro: #9B30FF;
+    --cor-secundaria-escuro: #8A2BE2;
+    --cor-background-claro: #F5F5F5;
+    --cor-background-escuro: #2E2E2E;
+    --cor-texto-claro: #333;
+    --cor-texto-escuro: #FFF;
+    --transicao: 0.3s ease;
+    --escala-animação: 1.05;
+}
+
+/* Corpo do site com fontes e cores */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--cor-background-claro);
+    color: var(--cor-texto-claro);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    transition: background-color var(--transicao), color var(--transicao);
+}
+
+/* Container principal */
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--cor-primaria-claro);
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transicao);
+    position: relative;
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Botão de troca de tema */
+#theme-toggle {
+    background-color: var(--cor-secundaria-claro);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color var(--transicao), transform var(--transicao);
+    font-family: 'Roboto', sans-serif;
+}
+
+#theme-toggle:hover {
+    background-color: var(--cor-secundaria-escuro);
+    transform: scale(var(--escala-animação));
+}
+
+/* Link de Como Usar */
+.link-como-usar {
+    color: var(--cor-secundaria-claro);
+    text-decoration: none;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: color var(--transicao);
+}
+
+.link-como-usar:hover {
+    color: var(--cor-secundaria-escuro);
+}
+
+/* Estilos dos campos de entrada e dos botões */
+.calculator input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    border: 2px solid var(--cor-secundaria-claro);
+    border-radius: 5px;
+    transition: border-color var(--transicao), transform var(--transicao);
+}
+
+.calculator .buttons button {
+    width: 40%;
+    padding: 15px;
+    margin: 10px;
+    font-size: 18px;
+    background-color: var(--cor-secundaria-claro);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color var(--transicao), transform var(--transicao);
+}
+
+.calculator .buttons button:hover {
+    background-color: var(--cor-secundaria-escuro);
+    transform: scale(var(--escala-animação));
+}
+
+/* Animação suave de foco nos campos de entrada */
+.calculator input:focus {
+    border-color: var(--cor-secundaria-escuro);
+    outline: none;
+}
+
+/* Resultado */
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.result span {
+    font-weight: bold;
+}
+
+/* Como Usar */
+.como-usar {
+    display: none;
+    background-color: var(--cor-background-claro);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: var(--cor-texto-claro);
+    text-align: left;
+    animation: fadeIn 1s ease-out;
+}
+
+.como-usar h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.como-usar ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.como-usar .link-voltar {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--cor-secundaria-claro);
+    text-decoration: none;
+}
+
+.como-usar .link-voltar:hover {
+    color: var(--cor-secundaria-escuro);
+}
+
+/* Animação de fade in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tema escuro */
+body.tema-escuro {
+    background-color: var(--cor-background-escuro);
+    color: var(--cor-texto-escuro);
+}
+
+body.tema-escuro .container {
+    background-color: var(--cor-primaria-escuro);
+}
+
+body.tema-escuro .calculator input {
+    border: 2px solid var(--cor-secundaria-escuro);
+    background-color: #333;
+    color: white;
+}
+
+body.tema-escuro .calculator .buttons button {
+    background-color: var(--cor-secundaria-escuro);
+}
+
+body.tema-escuro .result {
+    color: white;
+}
+
+body.tema-escuro .como-usar {
+    color: var(--cor-texto-escuro);
+}
